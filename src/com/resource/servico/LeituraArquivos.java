@@ -12,8 +12,8 @@ import com.resource.entidades.Operacoes;
 public class LeituraArquivos {
 
 	// Criação de Listas
-	List<DadosMercado> listDadosMercado = new ArrayList<DadosMercado>();
-	List<Operacoes> listOperacoes = new ArrayList<Operacoes>();
+	List<DadosMercado> listDadosMercado = new ArrayList<>();
+	List<Operacoes> listOperacoes = new ArrayList<>();
 
 	// Leitura de Linhas
 	public String linhas;
@@ -38,9 +38,11 @@ public class LeituraArquivos {
 				Integer NU_PRAZO_DIAS_CORRIDOS = Integer.parseInt(dados[1]);
 				Double VL_PRECO = Double.parseDouble(dados[2].replaceAll(",", ""));
 
-				//Falta adicionar a lista Dados Mercado
-				listDadosMercado.add(dados[0], dados[1], dados[2]);
+				// Falta adicionar a lista Dados Mercado
+				listDadosMercado.add(new DadosMercado(ID_PRECO, NU_PRAZO_DIAS_CORRIDOS, VL_PRECO));
 				System.out.println("Id: " + ID_PRECO + " Dias: " + NU_PRAZO_DIAS_CORRIDOS + " Preço: " + VL_PRECO);
+				
+				System.out.println(listDadosMercado.size());
 			}
 		}
 
@@ -48,6 +50,8 @@ public class LeituraArquivos {
 			System.out.println("Erro: " + e.getMessage());
 			e.printStackTrace();
 		}
+
+		
 	}
 
 	// Leitura da Tabela Operacoes
@@ -67,9 +71,9 @@ public class LeituraArquivos {
 				Integer ID_PRECO = Integer.parseInt(dados[13]);
 				String NM_SUBPRODUTO = dados[9];
 				Double QUANTIDADE = Double.parseDouble(dados[12].replaceAll(",", ""));
-				
-				//Falta adicionar a lista Operações
-				listOperacoes.add(dados[0], dados[1], dados[2]);
+
+				// Falta adicionar a lista Operações
+				listOperacoes.add(new Operacoes(ID_PRECO, NM_SUBPRODUTO, QUANTIDADE));
 
 				System.out.println(" Id: " + ID_PRECO + " Nome: " + NM_SUBPRODUTO + " Quantidade: " + QUANTIDADE);
 			}

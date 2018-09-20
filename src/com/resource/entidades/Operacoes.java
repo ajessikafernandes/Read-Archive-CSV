@@ -1,15 +1,19 @@
 package com.resource.entidades;
 
+import java.util.List;
+
 public class Operacoes {
 
+	List<Operacoes> listOperacoes;
+	
 	public String NM_SUBPRODUTO;
-	public Integer QUANTIDADE;
+	public Double QUANTIDADE;
 	public Integer ID_PRECO;
 
-	public Operacoes(String nM_SUBPRODUTO, Integer qUANTIDADE, Integer iD_PRECO) {
+	public Operacoes(Integer iD_PRECO, String nM_SUBPRODUTO, Double qUANTIDADE) {
+		ID_PRECO = iD_PRECO;
 		NM_SUBPRODUTO = nM_SUBPRODUTO;
 		QUANTIDADE = qUANTIDADE;
-		ID_PRECO = iD_PRECO;
 	}
 
 	public String getNM_SUBPRODUTO() {
@@ -20,11 +24,11 @@ public class Operacoes {
 		NM_SUBPRODUTO = nM_SUBPRODUTO;
 	}
 
-	public Integer getQUANTIDADE() {
+	public Double getQUANTIDADE() {
 		return QUANTIDADE;
 	}
 
-	public void setQUANTIDADE(Integer qUANTIDADE) {
+	public void setQUANTIDADE(Double qUANTIDADE) {
 		QUANTIDADE = qUANTIDADE;
 	}
 
